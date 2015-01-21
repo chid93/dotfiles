@@ -1,0 +1,14 @@
+[color]
+	ui = auto
+[core]
+	editor = gvim --nofork '%*'
+[push]
+	default = upstream
+[merge]
+	conflictstyle = diff3
+[user]
+	email = frostic3@users.noreply.github.com
+	name = frostic3
+[gui]
+	recentrepo = F:/Workspace/MOOCs/c-ud775/version-control/reflections
+[credential]

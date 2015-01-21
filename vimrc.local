@@ -1,0 +1,52 @@
+    set autoread
+
+    colorscheme lucius
+    set background=light
+
+    if WINDOWS() && has("gui_running")
+        set guifont=DejaVu_Sans_Mono_for_Powerline:h11,Consolas:h11
+    endif
+
+    " Well, You know. Save time.
+    nnoremap ; :
+
+    " Templates
+    " C++
+    nnoremap <leader>cc= :0r F:\Workspace\HackerRank\Algorithms\Warmup/base.cpp<CR>
+
+    " Scrollbind. start Left end Right"
+    nnoremap <leader>er :vs<cr>:set scb<cr>2<c-w>w<c-f>:set scb<cr>1<c-w>w
+    " Scrollbind. start Right end Left"
+    nnoremap <leader>el :vs<cr><c-f>:set scb<cr>2<c-w>w:set scb<cr>
+
+    "WINDOWS friendly mappings
+    " CTRL-T opens a new tab, CTRL-W closes tab, CTRL-Left/Right switches tabs
+    noremap   <C-T> :tabnew<return>
+    noremap   <S-W> :tabclose<return>
+    noremap   <C-Right> :tabprevious<return>
+    noremap   <C-Left> :tabNext<return>
+
+    " CTRL-A is Select all
+    noremap   <C-A> gggH<C-O>G
+    inoremap  <C-A> <C-O>gg<C-O>gH<C-O>G
+    cnoremap  <C-A> <C-C>gggH<C-O>G
+
+    " CTRL-v is Paste in insert mode, otherwise it is Visual-Block mode by default
+    inoremap  <C-v> <esc>"*pa
+    noremap   <C-v> "*p<return>
+
+    " CTRL-x is cut (in visual mode only)
+    vnoremap  <C-x> "*d
+
+    " CTRL-c is copy (in visual mode only)
+    vnoremap  <C-c> "*y
+
+    " CTRL-s is Write in Normal/Insert mode.
+    map  <C-s> :w<cr>
+
+   " <F11><F12> Quick Edit/Reload _vimrc
+    nmap <silent> <F11> :e $MYVIMRC<CR>
+    nmap <silent> <F12> :so $MYVIMRC<CR>
+
+    " Delete buffer 'bdelete'
+    nmap BB :bdelete <CR>
